@@ -1,0 +1,24 @@
+<h3>Liste des Sous categories</h3>
+<div class="container">
+    <input type="button"
+    value="nouveau" class="btn btn-success"routerLink="/ajscategorie">
+<table class="table striped">
+<thead>
+<tr>
+<th>Nom Sous catégorie</th>
+<th>Image Scategorie</th>
+</tr>
+</thead>
+<tbody>
+<tr class="table-life" *ngFor="let sc of listscategories">
+<td>{{sc.nomscategorie}}</td>
+<td><img src= "{{sc.imagescat}}"
+width="300" height="100"/></td>
+<td>modifier</td>
+<td><input type="button" value="Supprimer" class="btn btn-danger
+    btn-sm"
+    (click)="Supprimscategorie(sc._id)"></td>
+</tr>
+</tbody>
+</table>
+

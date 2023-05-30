@@ -1,0 +1,49 @@
+<h3>Ajout d'un article</h3>
+<div class="container">
+<form (ngSubmit)="ajoutarticle()">
+<div class="form-group">
+<div class="col-sm-4">
+<input type="text" class="form-control" placeholder="designation"
+id="designation" name="designation" [(ngModel)]="Acat.designation">
+</div>
+</div>
+<div class="form-group">
+    <div class="col-sm-4">
+    <input type="text" class="form-control" placeholder="marque"
+    id="marque" name="marque" [(ngModel)]="Acat.marque">
+    </div>
+    </div>
+<div class="form-group">
+    <div class="col-sm-4">
+    <input type="number" class="form-control" placeholder="prix"
+    id="prix" name="prix" [(ngModel)]="Acat.prix">
+    </div>
+    </div>
+<div class="form-group">
+        <div class="col-sm-4">
+        <input type="number" class="form-control" placeholder="qtestock"
+        id="qtestock" name="qtestock" [(ngModel)]="Acat.qtestock">
+        </div>
+        </div>
+<div class="form-group">
+<div class="col-sm-4">
+<input type="text"  class="form-control" id="imageart"
+name="imageart" [(ngModel)]="Acat.imageart" >
+<div *ngIf="Acat.imageart!=null"> <img src= "{{Acat.imageart}}" width="50" height="50"/></div>
+</div>
+</div>
+<div class="form-group">
+   
+    <select name="scategorieID"  class="form-select" >
+    <option *ngFor="let sc of listscategorie" value="{{sc._id}}"> 
+        {{sc. nomscategorie}}
+    </option>
+    </select>
+</div>
+<div class="form-group">
+<div class="col-sm-4">
+<button type="submit" class="btn btn-success">Ajouter</button>
+</div>
+</div>
+</form>
+</div>

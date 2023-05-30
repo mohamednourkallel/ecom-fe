@@ -1,0 +1,33 @@
+<h3>Liste des articles</h3>
+<div class="container">
+    <div class="col-md-2">
+        <input type="button"
+        value="nouveau" class="btn btn-success"routerLink="/ajarticle">
+<table class="table striped">
+<thead>
+<tr>
+<th>Designation</th>
+<th>Image d'article </th>
+<th>Marque </th>
+<th>Prix </th>
+<th>Stock </th>
+</tr>
+</thead>
+<tbody>
+<tr class="table-life" *ngFor="let a of listarticles">
+<td>{{a.designation}}</td>
+<td><img src= "{{a.imageart}}"
+width="300" height="100"/></td>
+<td>{{a.marque}}</td>
+<td>{{a.prix}}</td>
+<td>{{a.qtestock}}</td>
+<td><input type="button"
+    value="Modifier"
+    class="btn btn-info btn-sm"
+    [routerLink]="['/articles/editarticle/',a._id]"></td>
+<td><input type="button" value="Supprimer" class="btn btn-danger
+    btn-sm"
+    (click)="Supprimart(a._id)"></td>
+</tr>
+</tbody>
+</table>
